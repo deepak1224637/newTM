@@ -3,19 +3,77 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero-section py-5" style="background-color: #e6f2e6;">
+<section class="hero-section py-5" style="background: linear-gradient(135deg, #f3f4f1 0%, #fafefb 100%);">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <h1 class="display-4 text-success font-weight-bold">Welcome to Taza Makhana</h1>
-        <p class="lead text-muted">Wholesome, crunchy, and 100% natural makhana snacks straight from nature.</p>
-        <a href="#" class="btn btn-success btn-lg mt-3">Shop Now</a>
+        <h1 class="display-3 font-weight-bold text-dark mb-4" style="font-family: 'Poppins', sans-serif;">Welcome to <span class="text-success">Taza Makhana</span></h1>
+        <p class="lead text-muted mb-4" style="font-size: 1.2rem;">Wholesome, crunchy, and 100% natural makhana snacks straight from nature.</p>
+        <a href="/products/" class="btn btn-success btn-lg rounded-pill px-4">Explore Products</a>
       </div>
       <div class="col-lg-6 text-center">
-        <img src="{% static 'images/new_logo.png' %}" alt="Logo" class="img-fluid" style="max-height: 300px;">
+        <img src="{% static 'images/new_logo.png' %}" alt="Logo" class="img-fluid" style="max-height: 350px; animation: float 3s ease-in-out infinite;">
       </div>
     </div>
   </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918700228983?text=Hi, I want to inquire about Taza Makhana."
+     class="whatsapp_float" target="_blank">
+     <img src="https://img.icons8.com/ios-filled/50/4CAF50/whatsapp--v1.png" alt="WhatsApp Chat">
+  </a>
+
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .whatsapp_float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25D366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 5px #999;
+        z-index: 100;
+    }
+    .whatsapp_float img {
+        margin-top: 15px;
+        width: 30px;
+        height: 30px;
+    }
+  </style>
+</section>
+
+
+<style>
+.whatsapp_float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #0eea5f;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+.whatsapp_float img {
+    margin-top: 15px;
+    width: 30px;
+    height: 30px;
+}
+</style>
+
 </section>
 
 <!-- Features Section -->
