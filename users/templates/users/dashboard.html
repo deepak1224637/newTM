@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-success">Welcome, {{ user.username }}</h2>
+    <hr>
+    <p>Email: {{ user.email }}</p>
+    <p>Account Created: {{ user.date_joined }}</p>
+
+    <!-- User Orders -->
+    <h4 class="mt-5">Your Orders</h4>
+    {% if orders %}
+        <ul class="list-group">
+            {% for order in orders %}
+                <li class="list-group-item">
+                    Order ID: {{ order.id }} <br>
+                    Date: {{ order.created_at }} <br>
+                    Status: {{ order.status }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-muted">You have no orders yet.</p>
+    {% endif %}
+
+    <!-- Saved Addresses -->
+    <h4 class="mt-5">Saved Addresses</h4>
+    {% if addresses %}
+        <ul class="list-group">
+            {% for address in addresses %}
+                <li class="list-group-item">
+                    {{ address.full_name }} <br>
+                    {{ address.street_address }}, {{ address.city }} <br>
+                    {{ address.state }} - {{ address.zip_code }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-muted">No saved addresses.</p>
+    {% endif %}
+
+    <div class="mt-4">
+        <a href="{% url 'logout' %}" class="btn btn-outline-danger">Logout</a>
+    </div>
+</div>
+{% endblock %}
