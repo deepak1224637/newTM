@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+ALLOWED_HOSTS = ["*", os.environ.get("RAILWAY_STATIC_URL", "").replace("https://", "")]
 
 # Application definition
 
@@ -129,6 +130,7 @@ LOGOUT_REDIRECT_URL = '/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
@@ -141,6 +143,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'core/static',
-]
+STATICFILES_DIRS = [BASE_DIR / 'core/static',]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
